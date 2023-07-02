@@ -6,17 +6,18 @@ public class Homework3 {
     public static void main(String[] args) {
 
 //=========================== Задание 1 ========================================
+        int randNum = new Random().nextInt(10, 16);
 
-        ArrayList<Integer> ints = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            ints.add(new Random().nextInt(20) + 1);
+        ArrayList<Integer> ints = new ArrayList<>(randNum);
+        for (int i = 0; i < randNum; i++) {
+            ints.add(new Random().nextInt(30) + 1);
         }
         System.out.println(ints);
 
 //        ints.removeIf(i -> i % 2 == 0);
 
         ArrayList<Integer> temp1 = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < randNum; i++) {
             if (ints.get(i) % 2 != 0) {
                 temp1.add(ints.get(i));
             }
@@ -37,10 +38,10 @@ public class Homework3 {
 
         Double count = 0.0;
         double result;
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < randNum; i++) {
             count += ints.get(i);
         }
-        result = count / ints.size();
+        result =  count / ints.size();
         System.out.printf("Среднее значение элементов списка: %s\n", result);
     }
 }
